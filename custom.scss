@@ -52,6 +52,10 @@ $presentation-font-size-root: 30px !default;
   background-size: 25%;
 }
 
+#refs {
+  overflow-y: scroll !important;
+}
+
 #title-slide {
     text-align: left;
   
@@ -62,6 +66,9 @@ $presentation-font-size-root: 30px !default;
       font-weight: bold !important;
     }
 
+    .subtitle {
+      width: 700px !important;
+    }
     .quarto-title-authors {
       position: absolute !important;
       top: 156px !important;

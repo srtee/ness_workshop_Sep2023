@@ -1,0 +1,93 @@
+---
+title: "Conductors and Coding"
+subtitle: "Constant Potential Molecular Dynamics \n for the Electrode-Electrolyte Interface"
+author: "Shern Ren Tee"
+institute: "AIBN and CTCMS, University of Queensland \n s.tee@uq.edu.au"
+date: 26 April 2023
+date-format: "D MMM YYYY"
+bibliography: refs.bib
+footer: ""
+logo: "logo_inv.png"
+format:
+  revealjs:
+    toc: true
+    toc-depth: 1
+    theme: [default, custom.scss]
+    slide-number: true
+    code-line-numbers: false
+    include-after-body: "footer.html"
+title-slide-attributes:
+  data-background-color: black
+  data-background-image: tt_title_bg.png
+  data-background-size: contain
+  data-background-position: center center
+---
+
+## About Me
+
+![Find out more at my (very poorly maintained) [website](https://srtee.github.io)!](my_work.png)
+
+# Electrode Molecular Dynamics in a (Conductive) Nutshell
+
+## Electrochemistry: Opportunity and Crisis
+
+## At the Interface: Continuum Models
+
+## At the Interface: Atomistic Models
+
+## Computational Methods for Electrochemistry
+
+## Conductive MD: Minimization and Equipotential
+
+## Problem: Code and Community Limitations
+
+# Computational Efficiency Through Superior Theory
+
+## Fully Periodic Conductive MD
+
+## Fully Periodic Conductive MD: Accuracy
+
+## Fully Periodic Conductive MD: Efficiency
+
+## ELECTRODE: A ConP Community Code Package
+
+## Constant Potential and Constrained Charge
+
+## Back to the Phys Chem Classroom
+
+## Demonstrating Thermodynamic Equivalence
+
+## Accelerated Convergence for Further Efficiency
+
+# Applications and Future Directions
+
+## Funky MD: Thermopotentiostat
+
+## Funky MD: Potential-based Metadynamics
+
+## Applications: Capacitive Desalination
+
+## Applications: Corrosion in Nuclear Reactors
+
+## Project: DFT Charge-Matching
+
+## Project: Conductive MD with ML Potentials
+
+## Project: RSE Awareness in Australia
+
+## Acknowledgements
+
+::: {layout="[24,12,10]"}
+
+![Prof Debra Bernhardt and the Bernhardt Group](Bernhardt_Group.jpeg)
+
+![The Turing Way](LogoDetailWithText.jpg)
+
+![Research Software Engineers Au-NZ](RSE_AUNZ_logo.png)
+
+:::
+
+## References
+
+::: {#refs}
+:::
