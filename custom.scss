@@ -52,6 +52,18 @@ $presentation-font-size-root: 30px !default;
   background-size: 25%;
 }
 
+.reveal .red{
+  color: red !important;
+}
+
+.reveal .blue{
+  color: blue !important;
+}
+
+.reveal .green{
+  color: green !important;
+}
+
 #refs {
   overflow-y: scroll !important;
 }

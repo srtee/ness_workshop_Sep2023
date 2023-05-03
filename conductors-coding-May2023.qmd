@@ -31,17 +31,41 @@ title-slide-attributes:
 
 ## Electrochemistry: Opportunity and Crisis
 
-## At the Interface: Continuum Models
+::: {layout-ncol=3}
 
-## At the Interface: Atomistic Models
+![](img/im-719252.jpg)
+
+![](img/any_crap.png)
+
+![](img/nuts.png)
+
+:::
+
+> The history of science shows that any field can experience difficulties with research quality when the standards for metrics-oriented publications are poorly defined and the reward for such publications is high. [@nuts]
+
+## At the Interface: Continuum and Atomistic Models
+
+![[@baris]](img/nanolayer.png)
 
 ## Computational Methods for Electrochemistry
 
-## Conductive MD: Minimization and Equipotential
+![[@chemrevatomistic]](img/chemrevatomistic.jpg)
+
+## Conductive Molecular Dynamics
+
+![[@user-conp2]](img/electrode.jpg)
 
 ## Problem: Code and Community Limitations
 
 # Computational Efficiency Through Superior Theory
+
+## Conductive MD: Overview
+
+For conductive molecular dynamics, we add terms to the potential energy for charging up the electrode due to [the rest of the electrode]{.red}, [the electrolyte]{.blue}, and [the imposed potential difference]{.green}:
+
+$$ U = U_0 + \color{red}{\frac{1}{2} \mathbf{q}^T \mathbf{A} \mathbf{q}} - \color{blue}{\mathbf{b}^T \mathbf{q}} - \color{green}{\Delta \Psi \mathbf{d}^T \mathbf{q}} $$
+
+We solve for the desired electrode charges by 
 
 ## Fully Periodic Conductive MD
 

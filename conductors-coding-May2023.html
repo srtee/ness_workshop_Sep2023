@@ -381,19 +381,35 @@ Shern Ren Tee
 </section>
 <section id="electrochemistry-opportunity-and-crisis" class="slide level2">
 <h2>Electrochemistry: Opportunity and Crisis</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/im-719252.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/any_crap.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/nuts.png"></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>The history of science shows that any field can experience difficulties with research quality when the standards for metrics-oriented publications are poorly defined and the reward for such publications is high. <span class="citation" data-cites="nuts">(<a href="#/references" role="doc-biblioref" onclick="">Akbashev 2022</a>)</span></p>
+</blockquote>
 </section>
-<section id="at-the-interface-continuum-models" class="slide level2">
-<h2>At the Interface: Continuum Models</h2>
-</section>
-<section id="at-the-interface-atomistic-models" class="slide level2">
-<h2>At the Interface: Atomistic Models</h2>
-</section>
+<section id="at-the-interface-continuum-and-atomistic-models" class="slide level2">
+<h2>At the Interface: Continuum and Atomistic Models</h2>
+
+<img data-src="img/nanolayer.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="baris">(<a href="#/references" role="doc-biblioref" onclick="">Demir and Searles 2020</a>)</span></p></section>
 <section id="computational-methods-for-electrochemistry" class="slide level2">
 <h2>Computational Methods for Electrochemistry</h2>
-</section>
-<section id="conductive-md-minimization-and-equipotential" class="slide level2">
-<h2>Conductive MD: Minimization and Equipotential</h2>
-</section>
+
+<img data-src="img/chemrevatomistic.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="chemrevatomistic">(<a href="#/references" role="doc-biblioref" onclick="">Sundararaman, Vigil-Fowler, and Schwarz 2022</a>)</span></p></section>
+<section id="conductive-molecular-dynamics" class="slide level2">
+<h2>Conductive Molecular Dynamics</h2>
+
+<img data-src="img/electrode.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="user-conp2">(<a href="#/references" role="doc-biblioref" onclick="">Tee 2021</a>)</span></p></section>
 <section id="problem-code-and-community-limitations" class="slide level2">
 <h2>Problem: Code and Community Limitations</h2>
 </section></section>
@@ -401,6 +417,12 @@ Shern Ren Tee
 <section id="computational-efficiency-through-superior-theory" class="title-slide slide level1 center">
 <h1>Computational Efficiency Through Superior Theory</h1>
 
+</section>
+<section id="conductive-md-overview" class="slide level2">
+<h2>Conductive MD: Overview</h2>
+<p>For conductive molecular dynamics, we add terms to the potential energy for charging up the electrode due to <span class="red">the rest of the electrode</span>, <span class="blue">the electrolyte</span>, and <span class="green">the imposed potential difference</span>:</p>
+<p><span class="math display">\[ U = U_0 + \color{red}{\frac{1}{2} \mathbf{q}^T \mathbf{A} \mathbf{q}} - \color{blue}{\mathbf{b}^T \mathbf{q}} - \color{green}{\Delta \Psi \mathbf{d}^T \mathbf{q}} \]</span></p>
+<p>We solve for the desired electrode charges by</p>
 </section>
 <section id="fully-periodic-conductive-md" class="slide level2">
 <h2>Fully Periodic Conductive MD</h2>
@@ -485,8 +507,19 @@ Shern Ren Tee
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
-<div id="refs" role="list">
-
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-nuts" class="csl-entry" role="listitem">
+Akbashev, Andrew R. 2022. <span>“Electrocatalysis Goes Nuts.”</span> <em>ACS Catalysis</em> 12 (8): 4296–4301. <a href="https://doi.org/10.1021/acscatal.2c00123">https://doi.org/10.1021/acscatal.2c00123</a>.
+</div>
+<div id="ref-baris" class="csl-entry" role="listitem">
+Demir, Baris, and Debra J. Searles. 2020. <span>“Investigation of the Ionic Liquid Graphene Electric Double Layer in Supercapacitors Using Constant Potential Simulations.”</span> <em>Nanomaterials</em> 10 (11). <a href="https://doi.org/10.3390/nano10112181">https://doi.org/10.3390/nano10112181</a>.
+</div>
+<div id="ref-chemrevatomistic" class="csl-entry" role="listitem">
+Sundararaman, Ravishankar, Derek Vigil-Fowler, and Kathleen Schwarz. 2022. <span>“Improving the Accuracy of Atomistic Simulations of the Electrochemical Interface.”</span> <em>Chemical Reviews</em> 122 (12): 10651–74. <a href="https://doi.org/10.1021/acs.chemrev.1c00800">https://doi.org/10.1021/acs.chemrev.1c00800</a>.
+</div>
+<div id="ref-user-conp2" class="csl-entry" role="listitem">
+Tee, Shern Ren. 2021. <span>“<span class="nocase">Theory and Practice in Constant Potential Molecular Dynamics Simulations</span>.”</span> In <em><span class="nocase">Multiscale Modeling of Electrochemical Reactions and Processes</span></em>. AIP Publishing LLC. <a href="https://doi.org/10.1063/9780735422377_004">https://doi.org/10.1063/9780735422377_004</a>.
+</div>
 </div>
 
 <img src="logo_inv.png" class="slide-logo r-stretch"><div class="footer footer-default">
@@ -706,7 +739,7 @@ Shern Ren Tee
     </script>
     <script type="text/javascript">
     const footer = document.createElement('footer');
-    footer.textContent = 'DOI: 10.5281/zenodo.7857573'
+    footer.textContent = ''
     Object.assign( footer.style, {
       position: 'absolute',
       bottom: '20.5px',
