@@ -3,7 +3,7 @@ title: "Conductors and Coding"
 subtitle: "Constant Potential Molecular Dynamics \n for the Electrode-Electrolyte Interface"
 author: "Shern Ren Tee"
 institute: "AIBN and CTCMS, University of Queensland \n s.tee@uq.edu.au"
-date: 26 April 2023
+date: 4 May 2023
 date-format: "D MMM YYYY"
 bibliography: refs.bib
 footer: ""
@@ -17,15 +17,37 @@ format:
     code-line-numbers: false
     include-after-body: "footer.html"
 title-slide-attributes:
-  data-background-color: black
-  data-background-image: tt_title_bg.png
+  data-background-image: supercap_bg.jpg
+  data-background-color: "#ab4d4d"
   data-background-size: contain
   data-background-position: center center
 ---
 
 ## About Me
 
-![Find out more at my (very poorly maintained) [website](https://srtee.github.io)!](my_work.png)
+![](img/map.png)
+
+## About the Bernhardt Group (CTCMS, AIBN, UQ)
+
+![Prof Debra Bernhardt and the Bernhardt Group](Bernhardt_Group.jpeg)
+
+## Our Involvement with PaCER
+
+![](img/pacer.png)
+
+## The VISCOUS Project for Nanoflow Simulations
+
+![(slide with thanks from Dr Amy Geddes)](img/viscous.png)
+
+## Takeaways from This Talk
+
+* Theory and computation can help everyone!
+
+* Classroom concepts matter to real research
+
+* Interdisciplinary curiosity brings rewards
+
+* (These slides presented with [Quarto](https://quarto.org/) + [RevealJS](https://revealjs.com/) + GitHub Pages)
 
 # Electrode Molecular Dynamics in a (Conductive) Nutshell
 
@@ -35,13 +57,17 @@ title-slide-attributes:
 
 ![](img/im-719252.jpg)
 
-![](img/any_crap.png)
+![](img/any_crap.png){.fragment}
 
-![](img/nuts.png)
+![](img/nuts.png){.fragment}
 
 :::
 
+::: {.fragment}
+
 > The history of science shows that any field can experience difficulties with research quality when the standards for metrics-oriented publications are poorly defined and the reward for such publications is high. [@nuts]
+
+:::
 
 ## At the Interface: Continuum and Atomistic Models
 
@@ -63,8 +89,21 @@ title-slide-attributes:
 
 ![[@merlet2012]](img/canwemodel2.jpg)
 
-
 ## Problem: Code and Community Limitations
+
+Many packages ... only one of these is set up for conductive MD on Gadi and Setonix in Australia!
+
+::: {layout-ncol=2 layout-nrow=2}
+
+![](img/lammps.png){width=300px}
+
+![](img/gromacs.png){width=400px}
+
+![](img/openmm.png){width=400px}
+
+![](img/metalwalls.png){width=400px}
+
+:::
 
 # Computational Efficiency Through Superior Theory
 
@@ -72,51 +111,165 @@ title-slide-attributes:
 
 For conductive molecular dynamics, we add terms to the potential energy for charging up the electrode due to [the rest of the electrode]{.red}, [the electrolyte]{.blue}, and [the imposed potential difference]{.green}:
 
-$$ U = U_0 + \color{red}{\frac{1}{2} \mathbf{q}^T \mathbf{A} \mathbf{q}} - \color{blue}{\mathbf{b}^T \mathbf{q}} - \color{green}{\Delta \Psi \mathbf{d}^T \mathbf{q}} $$
+$$ U = U_0 + \color{red}{\frac{1}{2} \mathbf{q}^T \mathbf{A} \mathbf{q}} - \color{blue}{\mathbf{b}^T \mathbf{q}} - \color{green}{\Delta \psi \mathbf{d}^T \mathbf{q}} $$
 
-We solve for the desired electrode charges by 
+We solve for the electrode charges by minimising energy, and this gets us:
+
+$$ \mathbf{q^*} = \mathbf{A}^{-1}(\mathbf{b} + \Delta \psi \mathbf{d}) $$
+
+Turns out this is pretty cheap (for non-moving electrode atoms)!
 
 ## Fully Periodic Conductive MD
 
+![[@tee2022]](img/fullperiod_boxes.jpeg)
+
 ## Fully Periodic Conductive MD: Accuracy
+
+![[@tee2022]](img/fullperiod_timetrace.jpeg)
 
 ## Fully Periodic Conductive MD: Efficiency
 
+![[@tee2022]](img/fullperiod_timing.jpeg)
+
 ## ELECTRODE: A ConP Community Code Package
+
+::: {.columns}
+
+:::: {.column .smaller width=25%}
+
+Hamburg University of Technology collab:
+
+![Prof Dr.-Ing. Robert Meissner](img/rmeissner.jpg){width=50%}
+
+![Ludwig Ahrens-Iwers](img/ludwig.jpg){width=50%}
+
+::::
+
+:::: {.column width=70%}
+
+![Our package was accepted into the LAMMPS source code! [@electrodepkg]](nanotubes.jpeg)
+
+::::
+
+:::
 
 ## Constant Potential and Constrained Charge
 
+A crazy slide from 2020:
+
+![](img/slideshow.png){.border}
+
 ## Back to the Phys Chem Classroom
+
+What if we just *force* the electrodes to have a particular total charge?
+
+$$ U = U_0 + \color{red}{\frac{1}{2} \mathbf{q}^T \mathbf{A} \mathbf{q}} - \color{blue}{\mathbf{b}^T \mathbf{q}} $$
+
+$$ \mathrm{constraint:} \,\,\,\,\,\color{green}{\Delta \psi \mathbf{d}^T \mathbf{q} = Q}$$
+
+After some work we can relate the free energies:
+
+$$ F_Q = F_{\Delta \psi} + Q \Delta \psi $$ 
+
+and we have transformed between an intensive ensemble in $\Delta \psi$ and an extensive ensemble in $Q$ [@tee2023].
+
+## A Physical Picture
+
+![[@tee2023]](img/conq_circuit.png)
 
 ## Demonstrating Thermodynamic Equivalence
 
+![[@tee2023]](img/conq_timetrace.jpeg)
+
 ## Accelerated Convergence for Further Efficiency
+
+![[@tee2023]](img/conq_bse.jpeg)
 
 # Applications and Future Directions
 
-## Funky MD: Thermopotentiostat
+## Application: Capacitive Desalination
 
-## Funky MD: Potential-based Metadynamics
+![Simulating capacitive desalination through carbon nanotubes](img/capdes1.gif){width=500px}
 
-## Applications: Capacitive Desalination
+![Identifying different mechanism by nanotube diameter](img/capdes2.gif){width=500px}
 
-## Applications: Corrosion in Nuclear Reactors
+[@capdes]
+
+## Application: Molten Salt-Metal Interfaces for Nuclear Reactors
+
+::: {layout-ncol=2}
+
+![Mapping electrostatic potential across 800K molten salts](img/nuclear1.jpeg){width=400px}
+
+![Examining molecular orientations in bulk and near electrode](img/nuclear2.jpeg){width=320px}
+
+:::
+
+[@nuclear]
 
 ## Project: DFT Charge-Matching
 
+![Can we get close to DFT charges with constant potential molecular dynamics, and how close could our MD results get? Work ongoing with Xiaobo Lin (Vanderbilt University), Paul Kent (Oak Ridge Natl. Lab.) and Peter Cummings (Heriot-Watt University).](img/dftconp.png)
+
 ## Project: Conductive MD with ML Potentials
+
+::: {.dummy}
+
+![Can we use machine learning to fit charges better, or use fitted charges to make machine-learning potentials more physical and interpretable? Image from [@4ghdnnp].](img/hdnnp.webp){width=450px}
+
+:::
 
 ## Project: RSE Awareness in Australia
 
+::: {.dummy}
+
+![How can Australian funders better recognize and reward the growing research software engineering community?](img/rse-roles.jpg){width=600px}
+
+:::
+
+::: {.x-small}
+
+{{< include _scriberia.qmd >}}
+
+:::
+
 ## Acknowledgements
 
-::: {layout="[24,12,10]"}
+::: {.columns}
 
-![Prof Debra Bernhardt and the Bernhardt Group](Bernhardt_Group.jpeg)
+::: {.column width=50%}
 
-![The Turing Way](LogoDetailWithText.jpg)
+![Prof Debra Bernhardt and the Bernhardt Group](Bernhardt_Group.jpeg){width=400px}
 
-![Research Software Engineers Au-NZ](RSE_AUNZ_logo.png)
+::: {.x-small}
+
+Other collaborators:
+
+Xiaobo Lin (Vanderbilt), Dr Paul Kent (ORNL), Prof Peter Cummings (Heriot-Watt)
+
+Ludwig Ahrens-Iwers and Prof Robert Meissner (Hamburg University of Technology)
+
+:::
+
+:::
+
+::: {.column width=50%}
+
+:::: {layout=[[9,12],[10,8,10]] layout-valign=bottom}
+
+![](img/nci_logo.png){width=200px}
+
+![](img/pawsey-logo-beige.png){width=320px}
+
+![](img/rcc_logo.jpg){width=150px}
+
+![](RSE_AUNZ_logo.png){width=150px}
+
+![](LogoDetailWithText.jpg){width=150px}
+
+::::
+
+:::
 
 :::
 
@@ -124,3 +277,16 @@ We solve for the desired electrode charges by
 
 ::: {#refs}
 :::
+
+## Thanks for Listening! Any Questions? {.repeat-opening-background}
+
+Takeaways reminder:
+
+* Theory and computation can help everyone!
+
+* Classroom concepts matter to real research
+
+* Interdisciplinary curiosity brings rewards
+
+* (These slides presented with [Quarto](https://quarto.org/) + [RevealJS](https://revealjs.com/) + GitHub Pages)
+

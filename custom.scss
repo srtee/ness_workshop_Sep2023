@@ -41,14 +41,41 @@ $presentation-font-size-root: 30px !default;
 }
 
 .reveal .slide-background-content {
-  background-image: url("/techtalk_Apr2023/logo_inv.png");
+  background-image: url("/conductors_and_coding_May2023/supercap_logo.png");
   background-position: right 20px bottom 20px;
   background-size: 20%;
 }
 
+.reveal .level1 .slide-background-content {
+  background-color: #ab4d4d;
+}
+
+.reveal .level1 h1 {
+  color: #fff;
+}
+
+.reveal .repeat-opening-background {
+  background-color: rgba(171,77,77,0.1);
+}
+
+.reveal .repeat-opening-background .slide-background-content,
+.reveal .level1 .slide-background-content {
+  background-color: #ab4d4d;
+  background-image: url("/conductors_and_coding_May2023/supercap_bg.jpg");
+  background-position: center center;
+  background-size: contain;
+}
+
+.print-pdf .reveal .repeat-opening-background .slide-background-content {
+  background-color: #ab4d4d;
+  background-image: url("/conductors_and_coding_May2023/supercap_bg.jpg");
+  background-position: center center;
+  background-size: contain;
+}
+
 .print-pdf .reveal .slide-background-content {
-  background-image: url("/techtalk_Apr2023/logo_inv.png");
-  background-position: right 10px bottom 5px !important;
+  background-image: url("/conductors_and_coding_May2023/supercap_logo.png");
+  background-position: right 10px bottom 5px;
   background-size: 25%;
 }
 
@@ -62,6 +89,10 @@ $presentation-font-size-root: 30px !default;
 
 .reveal .green{
   color: green !important;
+}
+
+.reveal img .border {
+  border: 4px solid black !important;
 }
 
 #refs {
