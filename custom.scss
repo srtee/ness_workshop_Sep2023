@@ -59,14 +59,10 @@ $presentation-font-size-root: 30px !default;
 }
 
 .reveal .repeat-opening-background .slide-background-content,
-.reveal .level1 .slide-background-content {
-  background-color: #ab4d4d;
-  background-image: url("/conductors_and_coding_May2023/supercap_bg.jpg");
-  background-position: center center;
-  background-size: contain;
-}
-
-.print-pdf .reveal .repeat-opening-background .slide-background-content {
+.reveal .level1 .slide-background-content,
+.print-pdf .reveal .repeat-opening-background .slide-background-content,
+.print-pdf .reveal .level1 .slide-background-content,
+{
   background-color: #ab4d4d;
   background-image: url("/conductors_and_coding_May2023/supercap_bg.jpg");
   background-position: center center;
