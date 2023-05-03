@@ -49,6 +49,18 @@ title-slide-attributes:
 
 * (These slides presented with [Quarto](https://quarto.org/) + [RevealJS](https://revealjs.com/) + GitHub Pages)
 
+::: {.r-stretch}
+
+::: {.centercaption layout=[[-2,2,-1,2,-2]]}
+
+![Slides](img/conductors_slides.png)
+
+![GitHub repo](img/conductors_ghrepo.png)
+
+:::
+
+:::
+
 # Electrode Molecular Dynamics in a (Conductive) Nutshell
 
 ## Electrochemistry: Opportunity and Crisis
@@ -135,7 +147,7 @@ Turns out this is pretty cheap (for non-moving electrode atoms)!
 
 ::: {.columns}
 
-:::: {.column .smaller width=25%}
+:::: {.column .centercaption .smaller width=25%}
 
 Hamburg University of Technology collab:
 
@@ -290,3 +302,14 @@ Takeaways reminder:
 
 * (These slides presented with [Quarto](https://quarto.org/) + [RevealJS](https://revealjs.com/) + GitHub Pages)
 
+::: {.r-stretch}
+
+::: {.centercaption layout=[[-2,2,-1,2,-2]]}
+
+![Slides](img/conductors_slides.png)
+
+![GitHub repo](img/conductors_ghrepo.png)
+
+:::
+
+:::
