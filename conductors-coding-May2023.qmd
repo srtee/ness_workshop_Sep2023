@@ -2,7 +2,7 @@
 title: "Conductors and Coding"
 subtitle: "Constant Potential Molecular Dynamics \n for the Electrode-Electrolyte Interface"
 author: "Shern Ren Tee"
-institute: "AIBN and CTCMS, University of Queensland \n s.tee@uq.edu.au"
+institute: "AIBN and CTCMS, University of Queensland \n srtee.github.io"
 date: 4 May 2023
 date-format: "D MMM YYYY"
 bibliography: refs.bib
@@ -63,7 +63,7 @@ title-slide-attributes:
 
 # Electrode Molecular Dynamics in a (Conductive) Nutshell
 
-## Electrochemistry: Opportunity and Crisis
+## Electrochemistry: Opportunities ... and Questions
 
 ::: {layout-ncol=3}
 
@@ -87,7 +87,13 @@ title-slide-attributes:
 
 ## Computational Methods for Electrochemistry
 
-![[@chemrevatomistic]](img/chemrevatomistic.jpg)
+::: {.r-stack}
+
+![[@chemrevatomistic]](img/chemrevatomistic.jpg){.fragment}
+
+![](img/qchem.png){.fragment}
+
+:::
 
 ## Conductive Molecular Dynamics
 
@@ -143,7 +149,7 @@ Turns out this is pretty cheap (for non-moving electrode atoms)!
 
 ![[@tee2022]](img/fullperiod_timing.jpeg)
 
-## ELECTRODE: A ConP Community Code Package
+## ELECTRODE: A Conductive MD Community Code Package
 
 ::: {.columns}
 
