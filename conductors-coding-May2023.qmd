@@ -251,6 +251,22 @@ and we have transformed between an intensive ensemble in $\Delta \psi$ and an ex
 
 :::
 
+## Other Projects
+
+### Conductive Molecular Dynamics:
+
+* Split-site metal force fields
+
+* Thermopotentiostats and multi-thermopotentiostats
+
+### Nonequilibrium Molecular Dynamics:
+
+* Nonequilibrium dissipation under constrained flux
+
+### Academic / code mentoring for PhD / ECR
+
+* Software Sustainability Institute's *Learning To Code* mentor, Apr-Jun 2023
+
 ## Acknowledgements
 
 ::: {.columns}
