@@ -55,6 +55,15 @@ title-slide-attributes:
 
 ![[@user-conp2]](img/electrode.jpg)
 
+## Conductive Molecular Dynamics
+
+![[@merlet2012]](img/canwemodel1.jpg)
+
+## Conductive Molecular Dynamics
+
+![[@merlet2012]](img/canwemodel2.jpg)
+
+
 ## Problem: Code and Community Limitations
 
 # Computational Efficiency Through Superior Theory
