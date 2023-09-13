@@ -53,9 +53,9 @@ title-slide-attributes:
 
 ::: {.centercaption layout=[[-2,2,-1,2,-2]]}
 
-![Slides](img/conductors_slides.png)
+![Slides](img/qr_nessSep2023_link.png)
 
-![GitHub repo](img/conductors_ghrepo.png)
+![GitHub repo](img/qr_nessSep2023_ghrepo.png)
 
 :::
 
@@ -432,9 +432,9 @@ Takeaways reminder:
 
 ::: {.centercaption layout=[[-2,2,-1,2,-2]]}
 
-![Slides](img/conductors_slides.png)
+![Slides](img/qr_nessSep2023_link.png)
 
-![GitHub repo](img/conductors_ghrepo.png)
+![GitHub repo](img/qr_nessSep2023_ghrepo.png)
 
 :::
 
