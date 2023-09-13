@@ -2,3 +2,5 @@
 *2*.html
 *.pptx
 *Zone.Identifier*
+/.quarto/
+/_site/
