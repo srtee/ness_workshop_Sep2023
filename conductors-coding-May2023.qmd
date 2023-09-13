@@ -1,9 +1,9 @@
 ---
-title: "Conductors and Coding"
-subtitle: "Constant Potential Molecular Dynamics \n for the Electrode-Electrolyte Interface"
+title: "Conductors, Currents, and Coding"
+subtitle: "Constant Potential and Nonequilibrium Molecular Dynamics \n for the Electrode-Electrolyte Interface"
 author: "Shern Ren Tee"
-institute: "AIBN and CTCMS, University of Queensland \n srtee.github.io"
-date: 4 May 2023
+institute: "Griffith University \n srtee.github.io"
+date: 13 Sept 2023
 date-format: "D MMM YYYY"
 bibliography: refs.bib
 footer: ""
@@ -199,6 +199,10 @@ and we have transformed between an intensive ensemble in $\Delta \psi$ and an ex
 
 ![[@tee2023]](img/conq_timetrace.jpeg)
 
+## Demonstrating Thermodynamic Equivalence
+
+![[@tee2023]](img/conq_consistency.jpeg)
+
 ## Accelerated Convergence for Further Efficiency
 
 ![[@tee2023]](img/conq_bse.jpeg)
@@ -225,9 +229,33 @@ and we have transformed between an intensive ensemble in $\Delta \psi$ and an ex
 
 [@nuclear]
 
+## Application: Endo- and exothermicity of double layer formation
+
+![Constant potential simulations (GROMACS) observing that electric double layer formation is overall exothermic in aqueous electrolytes, but endothermic for negative-polarized aqueous EDL and for ionic liquid EDLs. [@dlheating2023]](img/dlheating.png){width=100%}
+
 ## Project: DFT Charge-Matching
 
 ![Can we get close to DFT charges with constant potential molecular dynamics, and how close could our MD results get? Work ongoing with Xiaobo Lin (Vanderbilt University), Paul Kent (Oak Ridge Natl. Lab.) and Peter Cummings (Heriot-Watt University).](img/dftconp.png)
+
+## Results (In Review)
+
+::: {.columns}
+
+:::: {.column width=85%}
+
+![By adding force field charges, per-atom charge widths and depths, and a reasonable toy interaction, we can get dynamic _DFT-like_ charges. In review. Collaboration with Xiaobo Lin (top) and Prof Peter Cummings (bottom)](img/mxene_conp.png){width=120%}
+
+::::
+
+:::: {.column width=15%}
+
+![](img/xiaobo_lin.jpg)
+
+![](img/Cummings-Mug.jpg)
+
+::::
+
+:::
 
 ## Project: Conductive MD with ML Potentials
 
@@ -236,6 +264,82 @@ and we have transformed between an intensive ensemble in $\Delta \psi$ and an ex
 ![Can we use machine learning to fit charges better, or use fitted charges to make machine-learning potentials more physical and interpretable? Image from [@4ghdnnp].](img/hdnnp.webp){width=450px}
 
 :::
+
+## Project: Fluxstatting
+
+::: {.columns style="font-size:80%"}
+
+:::: {.column width=30%}
+
+### Force EOM:
+
+$$
+\begin{align*}
+\dot{\mathbf{q}}_i &= \mathbf{p}_i/m_i \\
+\dot{\mathbf{p}}_i &= \mathbf{F}_i + \lambda \mathbf{i} - \alpha \mathbf{p}_i
+\end{align*}
+$$
+
+Equations of motion with constant imposed force $\lambda$
+
+::::
+
+:::: {.fragment .column width=35%}
+
+### Gauss Flux EOM:
+
+$$
+\begin{align*}
+\dot{\mathbf{q}}_i &= \mathbf{p}_i/m_i \\
+\dot{\mathbf{p}}_i &= \mathbf{F}_i + \lambda(\Gamma)w_i\mathbf{i} - \alpha \mathbf{p}_i \\
+\lambda(\Gamma) &= - \frac{\sum_i w_i \mathbf{F}_i\cdot \mathbf{i} }{\sum_i w_i}
+\end{align*}
+$$
+
+Varying force $\lambda(\Gamma)$ is a _Gaussian fluxstat_ which holds constant the weighted flux $J \equiv \sum_i w_i \mathbf{p}_{i}\cdot\mathbf{i}$, such as
+
+::::
+
+:::: {.fragment .column width=35%}
+
+### NH Flux EOM:
+
+$$
+\begin{align*}
+\dot{\mathbf{q}}_i &= \mathbf{p}_i/m_i \\
+\dot{\mathbf{p}}_i &= \mathbf{F}_i + \lambda(t)w_i\mathbf{i} - \alpha \mathbf{p}_i \\
+\dot{\lambda}(t) &\propto (J(\Gamma) - J_0)
+\end{align*}
+$$
+
+
+Varying force is a _Nose-Hoover fluxstat_.
+
+Some flows:
+
+* mass flow: $w_i = 1$
+
+* velocity: $w_i = 1/m_i$
+
+* current: $w_i = c_i/m_i$
+
+::::
+
+:::
+
+Force ("Thevenin") and flux ("Norton") steady states with both Gaussian and NH "fluxstats" are first-order equivalent (?): [@standish93],[@evans93]
+
+## Results (In Academic Limbo)
+
+![](img/Cu-H2O.png)
+
+## Results (In Academic Limbo)
+
+![](img/poise2_dec.png)
+
+## Results (In Academic Limbo)
+
+![](img/poise3.png)
 
 ## Project: RSE Awareness in Australia
 
@@ -251,7 +355,7 @@ and we have transformed between an intensive ensemble in $\Delta \psi$ and an ex
 
 :::
 
-## Other Projects
+## Other Projects {visibility="hidden"}
 
 ### Conductive Molecular Dynamics:
 
