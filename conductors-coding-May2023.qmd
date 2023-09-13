@@ -296,7 +296,7 @@ $$
 \end{align*}
 $$
 
-Varying force $\lambda(\Gamma)$ is a _Gaussian fluxstat_ which holds constant the weighted flux $J \equiv \sum_i w_i \mathbf{p}_{i}\cdot\mathbf{i}$, such as
+Varying force $\lambda(\Gamma)$ is a _Gaussian fluxstat_ which _constrains_ the weighted flux $J \equiv \sum_i w_i \mathbf{p}_{i}\cdot\mathbf{i}$.
 
 ::::
 
@@ -313,7 +313,7 @@ $$
 $$
 
 
-Varying force is a _Nose-Hoover fluxstat_.
+Varying force is a _Nose-Hoover fluxstat_ which _restrains_ $J$.
 
 Some flows:
 
